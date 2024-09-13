@@ -1,2 +1,2 @@
 # social-network
-Django-Based Social Network
+End of secondary school project
