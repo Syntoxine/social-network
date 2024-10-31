@@ -17,7 +17,7 @@ class Room(models.Model):
         self.save()
         
     def __str__(self):
-        return f"#{self.name} ({self.get_online_count()})"
+        return f"{self.name} ({self.get_online_count()})"
     
 class Message(models.Model):
     user = models.ForeignKey(to=User, on_delete=models.CASCADE)
@@ -26,4 +26,4 @@ class Message(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return f"{self.user.username} (#{self.room.name}): {self.content} [{self.timestamp}]"
+        return f"{self.user.username} ({self.room.name}): {self.content} [{self.timestamp}]"
